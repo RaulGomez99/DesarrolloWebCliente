@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title></title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      var num = prompt("Escriba un numero a ver si es feliz");
+      var array = new Array;
+      while(true){
+        num+="";
+        num = devuelveFeliz(num);
+        if(num==1) {
+          console.log(num);
+          break;
+        } else{
+          if(array[num]!=num){
+            array[num]=num;
+          }else{
+            break;
+          }
+        }
+      }
+      if(num==1){
+        document.write("<h1>El numero si que es feliz</h1>");
+      }else{
+        document.write("<h1>No es feliz el numero</h1>");
+      }
+      function devuelveFeliz(num){
+        var acum=0;
+
+
+        for(var i=0; i < num.length; i++){
+          
+          num2 = parseInt(num[i]);
+          
+          
+          acum =+ num2 * num2;
+         
+        }
+        return acum; 
+      }
+    </script>
+  </body>
+</html>
