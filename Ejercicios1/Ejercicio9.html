@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title></title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      function returnCorreoCifrado(correo){
+        var devolver = correo.split("@");
+        var palabra=correo.substring(0,2);
+        for(var i = 2; i< devolver[0].length;i++){
+            palabra+=".";
+        }
+        return palabra+devolver[1];
+
+      }
+      document.write(returnCorreoCifrado("raulgomez@gmail.com"));
+    </script>
+  </body>
+</html>

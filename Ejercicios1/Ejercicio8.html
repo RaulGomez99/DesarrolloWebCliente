@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title></title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      function devuelveCaracteres(palabra, cantidad, empieza){
+          if(empieza=="fin"){
+            return palabra.substring(palabra.length-(cantidad+1), palabra.length);
+          }else{
+            return palabra.substring(0, cantidad);
+          }
+      }
+      document.write(devuelveCaracteres("Hola me llamo Raul", 4 , "inicio"));
+      document.write("<br>"+devuelveCaracteres("Hola me llamo Raul", 4 , "fin"));
+      
+    </script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title></title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      function returnDiasMes (mes, año){
+          var array = [0,31,28,31,30,31,30,31,31,30,31,30,31];
+          if(mes!=2) return array[mes];
+          else{
+              if(año%4==0) return 29;
+              else return 28;
+          }
+      }
+    </script>
+  </body>
+</html>

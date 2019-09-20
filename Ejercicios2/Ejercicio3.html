@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title></title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      function horasPasadas(hora, horas){
+          var arr = hora.split(":");
+          var num = arr[0];
+          num = parseInt(num);
+          num+=parseInt(horas);
+          console.log(hora[0]);
+          var num2 = (num-num%24)/24;
+          console.log(num2);
+          num-=24*num2;
+          console.log(num);
+          return num+":"+arr[1];
+      }
+      document.write(horasPasadas("20:59", 2))
+    </script>
+  </body>
+</html>

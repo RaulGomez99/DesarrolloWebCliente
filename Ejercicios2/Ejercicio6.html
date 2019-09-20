@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title></title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+        function tipoTriangulo(l1, l2, l3){
+            if(triangulo(l1,l2,l3)){
+                return "No existe"
+            }else{
+                if(l1==l2 && l2==l3) return "Equilatero";
+                else if (l1 == l2 || l2== l3|| l1==l3) return "Isosceles";
+                else return "Rectangulo";
+            }
+        }
+        function triangulo(l1, l2, l3){
+            if(l1 +l2 <= l3) return false;
+            else if (l1 + l3 <= l2) return false;
+            else if (l2 + l3 <= l1) return false;
+            return true;
+
+        }
+        document.write(tipoTriangulo(4, 5, 6));
+    </script>
+  </body>
+</html>

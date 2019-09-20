@@ -5,7 +5,56 @@
   </head>
   <body>
     <script>
-      var comprobar = prompt("Escriba un numero a ver si es feliz");
+      var correcto;
+      var letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+      do{
+        correcto=true;
+        var comprobarDni = prompt("Escriba un DNI por favor");
+        if(comprobarDni.length!=9){
+          console.log("a")
+          correcto=false;
+        }
+        for(var i = 0; i < comprobarDni.length-1; i++){
+          
+          if(isNaN(parseInt(comprobarDni[i]))) correcto=false;
+          else console.log("b"+parseInt(comprobarDni[i]))
+        }
+        if(letras[parseInt(comprobarDni.substring(0,8)%23)] != comprobarDni[comprobarDni.length-1]) {
+          correcto=false;
+          console.log(letras[parseInt(comprobarDni.substring(0,8)%23)]);
+        }
+        if(!correcto) alert("Error vuelvalo a escribir");
+      }while(!correcto);
+      do{
+        correcto=true;
+        var comprobarTelefono = prompt("Escriba un Telefono en formato 123 456 789 por favor");
+        var arr = comprobarTelefono.split(" ");
+        if(arr.length!=3) correcto=false;
+        else{
+          for(var i = 0; i < arr.length; i++){
+            if(arr.length!=3) correcto=false;
+            else{
+              if(isNaN(arr[i]))correcto=false;
+            }
+          }
+        }
+        if(!correcto) alert("Error vuelvalo a escribir");
+      }while(!correcto);
+      do{
+        correcto=true;
+        var comprobarIp = prompt("Escriba una IP valida por favor");
+        arrIp = comprobarIp.split(".");
+        if(arrIp.length!=4)correcto=false;
+        else{
+          for(var i = 0; i < arrIp.length; i++){
+            if(isNaN(arrIp[i])) correcto=false;
+            else{
+              if(parseInt(arrIp[i]<0 || parseInt(arrIp[i]>255))) correcto=false;
+            }
+          }
+        }
+        if(!correcto) alert("Error vuelvalo a escribir");
+      }while(!correcto);
       
     </script>
   </body>

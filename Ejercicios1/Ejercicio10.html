@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title></title>
+    <style></style>
+  </head>
+  <body>
+    <script>
+      function returnCamelCase(palabra){
+          
+        var arr = palabra.split(" ");
+        var devolver=arr[0];
+        for(var i = 1; i < arr.length; i++){
+            arr[i]=arr[i].charAt(0).toUpperCase()+arr[i].substring(1,arr[i].length);
+            devolver+=arr[i];
+        }
+        return devolver;
+      }
+      document.write(returnCamelCase("Hola me  llamo Raul"));
+    </script>
+  </body>
+</html>
