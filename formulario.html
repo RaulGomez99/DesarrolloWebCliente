@@ -1,0 +1,74 @@
+<html>
+
+<head>
+    <title>Formulario</title>
+    <meta charset="utf-8">
+    <style>
+        .linea {
+            display: inline;
+            margin: auto;
+        }
+        
+        .linea div {
+            width: 20%;
+            text-align: right;
+            /* float: left;*/
+        }
+        
+        .linea .descripcion {
+            float: left;
+            height: 50px;
+        }
+        
+        .linea .cosa {
+            height: 50px;
+            float: left;
+            width: 79%;
+            text-align: left;
+            /* float: right;*/
+        }
+        
+        .linea .cosa input {
+            width: 95%;
+        }
+    </style>
+</head>
+
+<body>
+    <form style="background-color: lightgrey; border: 1px solid black; border-radius: 10px;">
+        <h3 style="text-align: center; color: white;">Formulario Total</h3>
+        <div class="linea">
+            <div class="descripcion">Nombre: &nbsp; </div>
+            <div class="cosa"><input type="text"></div>
+        </div>
+        <div class="linea">
+            <div class="descripcion">Apellidos: &nbsp; </div>
+            <div class="cosa"><input type="text"></div>
+        </div>
+        <div class="linea">
+            <div class="descripcion">e-mail: &nbsp; </div>
+            <div class="cosa"><input type="text"></div>
+        </div>
+        <div class="linea">
+            <div class="descripcion">Dni: &nbsp; </div>
+            <div class="cosa"><input type="text"></div>
+        </div>
+        <div class="linea">
+            <div class="descripcion">Password: &nbsp; </div>
+            <div class="cosa"><input type="password"></div>
+        </div>
+        <div class="linea">
+            <div class="descripcion">Repetir password: &nbsp; </div>
+            <div class="cosa"><input type="password"></div>
+        </div>
+        <div class="linea">
+            <div class="descripcion">Ip Equipo: &nbsp; </div>
+            <div class="cosa"><input type="text"></div>
+        </div>
+        <input type="submit" value="Enviar" style="background: blue; color: white; height: 40px; width: 120px; border: 1px solid black; margin-left:45%;">
+        <br><br><br>
+        <div style="clear:both"></div>
+    </form>
+</body>
+
+</html>
