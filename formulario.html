@@ -32,6 +32,92 @@
             width: 95%;
         }
     </style>
+    <script>
+        var comprueba = new Array;
+
+        function comprobarNombre(texto) {
+            var filtro = /^[A-Za-z\_\-\.\s\xF1\xD1]+$/;
+            if (filtro.test(texto.value)) {
+                comprueba[0] = true;
+            } else {
+                comprueba[0] = false;
+            }
+        }
+
+        function comprobarApellido(texto) {
+            var filtro = /^[A-Za-z\_\-\.\s\xF1\xD1]+$/;
+            if (filtro.test(texto.value)) {
+                comprueba[1] = true;
+            } else {
+                comprueba[1] = false;
+            }
+        }
+
+        function comprobarEmail(texto) {
+            var filtro = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            if (filtro.test(texto.value)) {
+                comprueba[2] = true;
+            } else {
+                comprueba[2] = false;
+            }
+        }
+
+        function comprobarDni(texto) {
+            var letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+            comprueba[3] = true;
+            if (texto.value.length != 9) {
+                comprueba[3] = false;
+            }
+            for (var i = 0; i < texto.value.length - 1; i++) {
+                if (isNaN(parseInt(texto.value[i]))) comprueba[3] = false;
+            }
+            if (letras[parseInt(texto.value.substring(0, 8) % 23)] != texto.value[texto.value.length - 1]) {
+                comprueba[3] = false;
+            }
+        }
+
+        function comprobarIp(texto) {
+            comprueba[6] = true;
+            arrIp = texto.value.split(".");
+            if (arrIp.length != 4) comprueba[6] = false;
+            else {
+                for (var i = 0; i < arrIp.length; i++) {
+                    if (isNaN(arrIp[i])) comprueba[6] = false;
+                    else {
+                        if (parseInt(arrIp[i]) > 0 && parseInt(arrIp[i]) > 255) {
+                            comprueba[6] = false;
+                        }
+                    }
+                }
+            }
+        }
+
+        function comprobarRepetirPassword(texto) {
+            if (texto.value == document.getElementById("contra").value) comprueba[5] = true;
+            else comprueba[5] = false;
+        }
+
+        function respuesta() {
+            var campos = ["Nombre", "Apellidos", "E-mail", "Dni", "Password", "Repetir password", "Ip Equipo"]
+            var resp = "";
+            for (let i = 0; i <= 6; i++) {
+                if (!comprueba[i]) resp += "Fallo en el campo: " + campos[i] + "\n";
+            }
+            if (!resp) alert("Esta todo bien");
+            else alert(resp);
+        }
+
+        function comprobarPassword(texto) {
+            if (texto.value.length < 8) comprueba[4] = false;
+            else {
+                var filtro = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,2000}$/;
+                if (filtro.test(texto.value)) {
+                    comprueba[4]=true;
+                    comprueba[5] = false;
+                } else comprueba[4]=false;
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -39,33 +125,33 @@
         <h3 style="text-align: center; color: white;">Formulario Total</h3>
         <div class="linea">
             <div class="descripcion">Nombre: &nbsp; </div>
-            <div class="cosa"><input type="text"></div>
+            <div class="cosa"><input type="text" onblur="comprobarNombre(this);"></div>
         </div>
         <div class="linea">
             <div class="descripcion">Apellidos: &nbsp; </div>
-            <div class="cosa"><input type="text"></div>
+            <div class="cosa"><input type="text" onblur="comprobarApellido(this);"></div>
         </div>
         <div class="linea">
             <div class="descripcion">e-mail: &nbsp; </div>
-            <div class="cosa"><input type="text"></div>
+            <div class="cosa"><input type="text" onblur="comprobarEmail(this);"></div>
         </div>
         <div class="linea">
             <div class="descripcion">Dni: &nbsp; </div>
-            <div class="cosa"><input type="text"></div>
+            <div class="cosa"><input type="text" onblur="comprobarDni(this);"></div>
         </div>
         <div class="linea">
             <div class="descripcion">Password: &nbsp; </div>
-            <div class="cosa"><input type="password"></div>
+            <div class="cosa"><input id="contra" type="password" onblur="comprobarPassword(this);"></div>
         </div>
         <div class="linea">
             <div class="descripcion">Repetir password: &nbsp; </div>
-            <div class="cosa"><input type="password"></div>
+            <div class="cosa"><input id="contra2" type="password" onblur="comprobarRepetirPassword(this);"></div>
         </div>
         <div class="linea">
             <div class="descripcion">Ip Equipo: &nbsp; </div>
-            <div class="cosa"><input type="text"></div>
+            <div class="cosa"><input type="text" onblur="comprobarIp(this);"></div>
         </div>
-        <input type="submit" value="Enviar" style="background: blue; color: white; height: 40px; width: 120px; border: 1px solid black; margin-left:45%;">
+        <input type="submit" onclick="respuesta()" value="Enviar" style="background: blue; color: white; height: 40px; width: 120px; border: 1px solid black; margin-left:45%;">
         <br><br><br>
         <div style="clear:both"></div>
     </form>
