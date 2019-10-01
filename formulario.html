@@ -40,6 +40,7 @@
             if (filtro.test(texto.value)) {
                 comprueba[0] = true;
             } else {
+                texto.value = "Error";
                 comprueba[0] = false;
             }
         }
@@ -49,6 +50,7 @@
             if (filtro.test(texto.value)) {
                 comprueba[1] = true;
             } else {
+                texto.value = "Error";
                 comprueba[1] = false;
             }
         }
@@ -58,6 +60,7 @@
             if (filtro.test(texto.value)) {
                 comprueba[2] = true;
             } else {
+                texto.value = "Error";
                 comprueba[2] = false;
             }
         }
@@ -66,25 +69,35 @@
             var letras = "TRWAGMYFPDXBNJZSQVHLCKE";
             comprueba[3] = true;
             if (texto.value.length != 9) {
+                texto.value = "Error";
                 comprueba[3] = false;
             }
             for (var i = 0; i < texto.value.length - 1; i++) {
-                if (isNaN(parseInt(texto.value[i]))) comprueba[3] = false;
+                if (isNaN(parseInt(texto.value[i]))) {
+                    texto.value = "Error";
+                    comprueba[3] = false;
+                }
             }
             if (letras[parseInt(texto.value.substring(0, 8) % 23)] != texto.value[texto.value.length - 1]) {
                 comprueba[3] = false;
+                texto.value = "Error";
             }
         }
 
         function comprobarIp(texto) {
             comprueba[6] = true;
             arrIp = texto.value.split(".");
-            if (arrIp.length != 4) comprueba[6] = false;
-            else {
+            if (arrIp.length != 4) {
+                comprueba[6] = false;
+                texto.value="Error";
+            } else {
                 for (var i = 0; i < arrIp.length; i++) {
-                    if (isNaN(arrIp[i])) comprueba[6] = false;
-                    else {
+                    if (isNaN(arrIp[i])) {
+                        texto.value = "Error";
+                        comprueba[6] = false;
+                    } else {
                         if (parseInt(arrIp[i]) > 0 && parseInt(arrIp[i]) > 255) {
+                            texto.value = "Error";
                             comprueba[6] = false;
                         }
                     }
@@ -94,7 +107,10 @@
 
         function comprobarRepetirPassword(texto) {
             if (texto.value == document.getElementById("contra").value) comprueba[5] = true;
-            else comprueba[5] = false;
+            else {
+                comprueba[5] = false;
+                alert("No conincide con password");
+            }
         }
 
         function respuesta() {
@@ -108,13 +124,19 @@
         }
 
         function comprobarPassword(texto) {
-            if (texto.value.length < 8) comprueba[4] = false;
+            if (texto.value.length < 8){
+                comprueba[4] = false;
+                alert("No cumple los requisitos");
+            } 
             else {
                 var filtro = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,2000}$/;
                 if (filtro.test(texto.value)) {
-                    comprueba[4]=true;
+                    comprueba[4] = true;
                     comprueba[5] = false;
-                } else comprueba[4]=false;
+                } else {
+                    comprueba[4] = false;
+                    alert("No cumple los requisitos");
+                }
             }
         }
     </script>
