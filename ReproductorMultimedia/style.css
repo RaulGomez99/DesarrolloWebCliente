@@ -1,0 +1,101 @@
+body{
+    background-image: url("paisaje.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main{
+    display: grid;
+    grid-template-areas: "video aside"
+                        "opciones aside";
+    grid-template-columns: 87% 13%;
+}
+
+aside{
+    grid-area: aside;
+    margin-left: -25%;
+}
+
+video{
+    object-fit: cover;
+}
+aside *{
+    
+    width: 78%;
+}
+
+aside *:hover{
+    transform:scale(1.1);
+}
+
+#mainVideo{ 
+    grid-area: video;
+    width: 60%;
+    height: 70vh;
+    margin-left: 20%;
+    z-index: 2;
+}
+
+#mainVideo:hover{
+    z-index: 0;
+}
+
+#botones{
+    position: absolute;
+    top:77%;
+    width: 45%;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: -8%;
+    z-index: 1;
+}
+
+#botones:hover{
+    z-index: 3;
+}
+
+img{
+    width: 10%;
+    background-color: orange;
+    
+}
+
+#adv{
+    top: 10%;
+    left: 33%;
+    position: absolute;
+    width: 50vh;
+    height: 50vh;
+    z-index: 7;
+    background: red;
+    font-size: 300%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#tapaTodo{
+    position: absolute;
+    height: 98vh;
+    width: 200vh;
+    opacity: 0;
+    z-index: 6;
+    background: black;;
+}
+
+#cerrar{
+    position: absolute;
+    top:10%;
+    left: 56%;
+    z-index: 7;
+}
+
+#barra{
+    position: absolute;
+    width: 100vh;
+    top: 75%;
+    left:20%;
+}

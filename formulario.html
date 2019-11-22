@@ -109,6 +109,7 @@
             if (texto.value == document.getElementById("contra").value) comprueba[5] = true;
             else {
                 comprueba[5] = false;
+
                 alert("No conincide con password");
             }
         }
@@ -132,7 +133,7 @@
                 var filtro = /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,2000}$/;
                 if (filtro.test(texto.value)) {
                     comprueba[4] = true;
-                    comprueba[5] = false;
+                    comprobarRepetirPassword(document.getElementById("contra2"));
                 } else {
                     comprueba[4] = false;
                     alert("No cumple los requisitos");
