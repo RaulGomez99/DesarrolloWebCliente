@@ -1,0 +1,131 @@
+<html>
+
+<head>
+    <title>Ejercicio Cuadrados</title>
+    <meta charset="utf-8">
+    <style>
+        #primero div {
+            background: red;
+        }
+        
+        #segundo div {
+            background: blue;
+        }
+        
+        #tercero div {
+            background: green;
+        }
+        
+        #cuarto div {
+            background: black;
+        }
+        
+        #todo {
+            display: flex;
+            justify-content: start;
+        }
+        
+        .cuadrado {
+            transition: 1s;
+            margin: 30px;
+            width: calc(100% -60px);
+            height: 300px;
+            display: block;
+            
+        }
+
+
+        .menguado{
+
+          width: 0px !important;
+          transition: width 3s;
+          /*transform: scaleX(0.0);*/
+        }
+        .sombra{
+          box-shadow: 2px 2px darkslategray;
+          transition: 1s;
+        }
+        .sombra2{
+          box-shadow: 2px 2px darkslategray inset;
+          transition:  1s;
+        }
+        
+        .papa {
+            text-align: center;
+            width:360px;
+        }
+        
+        .papa button {
+            width:calc(100% - 100px);
+            margin:50px;
+            margin-top: 10px;
+            font-size:9px;
+        }
+
+        .circulo{
+          border-radius: 100%;
+          transition:   1s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="todo">
+
+        <div id="primero" class="papa">
+            <div class="cuadrado sombra" onmouseover="circulear(this)" onmouseout="desCirculear(this)" onmousedown="sombra(this)" onmouseup="sombra2(this)" ondblclick="sombra3(this)">
+
+            </div>
+            <button onclick="eliminar(this);">Eliminar</button>
+        </div>
+        <div id="segundo" class="papa">
+            <div class="cuadrado sombra" onmouseover="circulear(this)" onmouseout="desCirculear(this)" onmousedown="sombra(this)" onmouseup="sombra2(this)" ondblclick="sombra3(this)">
+            </div>
+            <button onclick="eliminar(this);">Eliminar</button>
+        </div>
+        <div id="tercero" class="papa">
+            <div class="cuadrado sombra" onmouseover="circulear(this)" onmouseout="desCirculear(this)" onmousedown="sombra(this)" onmouseup="sombra2(this)" ondblclick="sombra3(this)">
+
+            </div>
+            <button onclick="eliminar(this);">Eliminar</button>
+        </div>
+        <div id="cuarto" class="papa">
+            <div class="cuadrado sombra" onmouseover="circulear(this)" onmouseout="desCirculear(this)" onmousedown="sombra(this)" onmouseup="sombra2(this)" ondblclick="sombra3(this)">
+
+            </div>
+            <button onclick="eliminar(this);">Eliminar</button>
+        </div>
+    </div>
+
+    <script>
+      function circulear(cuadrado){
+        cuadrado.classList.add("circulo");
+      }
+
+      function desCirculear(cuadrado){
+        cuadrado.classList.remove("circulo");
+      }
+
+      function sombra(cuadrado){
+        cuadrado.classList.remove("sombra");
+      }
+
+      function sombra2(cuadrado){
+        cuadrado.classList.add("sombra");
+      }
+      function sombra3(cuadrado){
+        cuadrado.classList.remove("sombra");
+        cuadrado.classList.add("sombra2");
+        cuadrado.onmouseout= function() {return false};
+      }
+
+      function eliminar(boton){
+        boton.style.display="none";
+       boton.parentNode.classList.add("menguado");
+    /*  boton.parentNode.children[0].classList.add("menguado");*/
+       setTimeout(function(){boton.parentNode.remove();}, 3000);
+      }
+    </script>
+</body>
+
+</html>

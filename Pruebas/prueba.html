@@ -1,0 +1,21 @@
+<html>
+
+<head>
+    <script>
+      window.onload = function(a){
+        document.getElementById("boton").addEventListener("click", funcion);
+        console.log(a);
+        function funcion(evento) {
+            console.log(this);
+            console.log(evento);
+        }
+      }
+    </script>
+</head>
+
+<body>
+    <button id="boton">No me hagas click</button>
+
+</body>
+
+</html>

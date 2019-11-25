@@ -1,0 +1,60 @@
+#primero div {
+    background: red;
+}
+
+#segundo div {
+    background: blue;
+}
+
+#tercero div {
+    background: green;
+}
+
+#cuarto div {
+    background: black;
+}
+
+#todo {
+    display: flex;
+    justify-content: start;
+}
+
+.cuadrado {
+    transition: 1s;
+    margin: 30px;
+    width: calc(100% -60px);
+    height: 300px;
+    display: block; 
+}
+
+.menguado{
+
+  width: 0px !important;
+  transition: width 2s;
+  /*transform: scaleX(0.0);*/
+}
+.sombra{
+  box-shadow: 10px 10px darkslategray;
+  transition: 1s;
+}
+.sombra2{
+  box-shadow: 10px 10px darkslategray inset;
+  transition:  1s;
+}
+
+.papa {
+    text-align: center;
+    width:360px;
+}
+
+.papa button {
+    width:calc(100% - 100px);
+    margin:50px;
+    margin-top: 10px;
+    font-size:9px;
+}
+
+.circulo{
+  border-radius: 100%;
+  transition:   1s;
+}

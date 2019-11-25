@@ -1,0 +1,28 @@
+ body{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr;
+ }
+
+ .boton{
+     background-color: lightgray;
+     width: 100%;
+     height: 200px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+ .X{
+    color: red;
+    font-size: 1000%; 
+ }
+
+ .O{
+    color: blue;
+    font-size: 1000%; 
+ }
+
+ .oculto{
+    display: none;
+ }

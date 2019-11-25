@@ -1,0 +1,16 @@
+#texto{
+    width: 100%;
+    border: 1px solid black;
+    height: 10px;
+}
+.negrita{
+    font-weight: bold;
+}
+
+.tachada{
+    text-decoration: line-through;
+}
+
+.cursiva{
+    font-style: italic;
+}
