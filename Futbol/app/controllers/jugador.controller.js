@@ -12,7 +12,7 @@ exports.create = (req,res)=>{
 
     const equipo = new Equipo({
         nombre: req.body.nombreEquipo || "Sin identificar",
-        jugadores:[{nombre:"nombre1"},{nombre:"nombre2"}]
+        jugadores:[]
        
     })
     //console.log(req)

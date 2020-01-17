@@ -5,10 +5,13 @@ function init(){
     document.getElementById("addEquipo").addEventListener("click", addEquipo);
     document.getElementById("addJugador").addEventListener("click", addJugador);
     let content = document.querySelector("content");
+  //  document.querySelector("content").innerHTML+="<div></div>";
     fetch("/jugadores").then(res => {return res.json();}).then(respuesta => {
         equipos = respuesta;
+        
         equipos.forEach(equipo => {
             cargaEquipo(equipo);
+            // document.querySelector("content").innerHTML+="<div></div>";
         });
     });
 }
@@ -27,7 +30,7 @@ function addEquipo(){
             return res.json();
         })
         .then(respuesta => {
-            console.log(respuesta)
+            cargaEquipo(respuesta);
             
         });
 }
@@ -53,7 +56,8 @@ function addJugador(){
 }
 
 function cargaEquipo(equipo){
-    let text = "<div class='equipo' id="+equipo._id+">"+equipo.nombre;
+    let text = "<div class='equipo' id="+equipo._id+">"+
+                "<div class='nombreEquipo'>"+equipo.nombre+"</div>";
     equipo.jugadores.forEach(jugador=>{
         text+="<div class='jugador'>"+jugador+"</div>";
     })
