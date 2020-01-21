@@ -9,6 +9,8 @@ module.exports = (app) => {
 
     app.put('/jugadores', jugadores.createJugador);
 
+    app.put('/jugadores/delete', jugadores.deleteJugador);
+
   /*  // Retrieve a single puntuaciones with puntuacionId
     app.get('/puntuaciones/:puntuacionId', puntuaciones.findOne);
 
