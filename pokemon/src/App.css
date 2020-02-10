@@ -1,0 +1,73 @@
+.pokedex{
+  background-color: red;
+  text-align: center;
+}
+/*.nombre{
+  grid-area: nombre;
+}
+.alturaPeso{
+  grid-area: alturaPeso;
+}
+.ataques{
+  grid-area: ataques;
+}
+.tipos{
+  grid-area: tipos;
+}
+.imagen{
+  grid-area: img;
+
+}
+
+.detallePokemon{
+  display: grid;
+  width: 50vw;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 25px;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: "img","img","nombre"
+                        "img","img","alturaPeso"
+                        "img","img","tipos"
+                        "ataques","ataques","ataques";
+}*/
+.detallePokemon{
+  display: grid;
+  width: 50vw;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 25px;
+}
+
+.busqueda{
+  width: 60vw;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.busqueda input{
+  width: 60vw;
+}
+
+.pokeItem{
+  border: 1px solid black;
+  width: 60.2vw;
+  height: 7vh;
+}
+.pokeItem:hover{
+  background: lightgray;
+}
+.pokeFotoBusc{
+  border: 1px solid black;
+  border-radius: 100%;
+  height: 7vh;
+  float: right;
+}
+.pokeItem span{
+  font-size: large;
+}
